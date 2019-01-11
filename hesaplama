@@ -1,0 +1,119 @@
+echo "# direnc-hesaplama" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/yarisci01/direnc-hesaplama.git
+git push -u origin master
+sonuc = str
+def renk(renk1):
+    sonuc = ""
+    if renk1 == "S":
+        sonuc="0"
+    elif renk1 == "K":
+        sonuc = "1"
+    elif renk1 == "R":
+        sonuc = "2"
+    elif renk1 == "T":
+        sonuc = "3"
+    elif renk1 == "L":
+        sonuc = "4"
+    elif renk1 == "Y":
+        sonuc = "5"
+    elif renk1 == "M":
+        sonuc = "6"
+    elif renk1 == "P":
+        sonuc = "7"
+    elif renk1 == "G":
+        sonuc = "8"
+    elif renk1 == "B":
+        sonuc = "9"
+    else:
+        sonuc = "Bilinmiyor"
+    return sonuc
+
+def renk_2(renk2):
+    sonuc = ""
+    if renk2 == "S":
+        sonuc="0"
+    elif renk2 == "K":
+        sonuc = "1"
+    elif renk2 == "R":
+        sonuc = "2"
+    elif renk2 == "T":
+        sonuc = "3"
+    elif renk2 == "L":
+        sonuc = "4"
+    elif renk2 == "Y":
+        sonuc = "5"
+    elif renk2 == "M":
+        sonuc = "6"
+    elif renk2 == "P":
+        sonuc = "7"
+    elif renk2 == "G":
+        sonuc = "8"
+    elif renk2 == "B":
+        sonuc = "9"
+    else:
+        sonuc = "Bilinmiyor"
+    return sonuc
+
+def renk_deger(renk3):
+    sonuc = 0.0
+    if renk3 == "S":
+        sonuc = ""
+    elif renk3 == "K":
+        sonuc = "0"
+    elif renk3 == "R":
+        sonuc = "00"
+    elif renk3 == "T":
+        sonuc = "000"
+    elif renk3 == "L":
+        sonuc = "0000"
+    elif renk3 == "Y":
+        sonuc = "00000"
+    elif renk3 == "M":
+        sonuc = "000000"
+    elif renk3 == "P":
+        sonuc = "0000000"
+    elif renk3 == "G":
+        sonuc = "00000000"
+    elif renk3 == "B":
+        sonuc = "000000000"
+    else:
+        sonuc = 0.0
+    return sonuc
+
+def tolerans(renk4):
+    sonuc = 0.0
+    if renk4 == "K":
+        sonuc = "%1"
+    elif renk4 == "R":
+        sonuc = "%2"
+    elif renk4 == "A":
+        sonuc = "%5"
+    elif renk4 == "U":
+        sonuc = "%10"
+    else:
+        sonuc = "BILINMIYOR"
+    return sonuc
+
+while 2>1 :
+    barkod_no =input("Ürün Barkodunu Okutunuz:")
+
+    if (barkod_no == "99"):
+        break
+
+    renk1 = barkod_no[0:1]
+    renk2 = barkod_no[1:2]
+    renk3 = barkod_no[2:3]
+    renk4 = barkod_no[3:4]
+
+    ismi  = renk(renk1)
+    grami = renk_2(renk2)
+    fiyati= renk_deger(renk3)
+    tolerans =tolerans(renk4)
+
+    print("*********************")
+    print("Direnc Degeri :" ,ismi+grami+fiyati,"OHM")
+    print("Toleransı:" ,tolerans)
+    print("*********************")
